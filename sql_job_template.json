@@ -1,0 +1,65 @@
+{
+    "parameters": {
+        "poolId": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of Azure Batch pool which runs the job"
+            }
+        },
+        "jobId": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of Azure Batch job"
+            }
+        },
+		"targetsql": {
+            "type": "string",
+            "metadata": {
+                "description": "target sql connection string"
+            }
+        },
+        "bacpacurl":{
+            "type":"string",
+            "metadata":{
+                "description":"SAS url to bacpac file"
+            }
+        },
+        "bacpacfilename": {
+            "type":"string",
+            "metadata":{
+                "description":"bacpac filename"
+            }
+        }
+    },
+    "job": {
+        "type": "Microsoft.Batch/batchAccounts/jobs",
+        "apiVersion": "2016-12-01",
+        "properties": {
+            "id": "[parameters('jobId')]",
+            "constraints": {
+                "maxWallClockTime": "PT5H",
+                "maxTaskRetryCount": 1
+            },
+            "poolInfo": {
+                "poolId": "[parameters('poolId')]"
+            },
+            "taskFactory": {
+                "type": "taskCollection",
+              "tasks": [
+					{
+					  "id" : "mytask1",
+					   "commandLine": "cmd.exe /c \"\"C:/Program Files (x86)/Microsoft SQL Server/140/DAC/bin/sqlpackage.exe\" /a:import /tcs:\"[parameters('targetsql')]\" /sf:[parameters('bacpacfilename')] /p:DatabaseEdition=Standard /p:DatabaseServiceObjective=S0\"",
+						"resourceFiles": [
+                        {
+							"httpurl":"[parameters('bacpacurl')]",
+							"filePath": "[parameters('bacpacfilename')]"
+                        }
+                    ]					   
+					}
+					
+					]
+            },
+            "onAllTasksComplete": "terminatejob"
+        }
+    }
+}

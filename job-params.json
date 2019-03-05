@@ -1,0 +1,18 @@
+{
+  "poolId": {
+    "value": "jdhtestpool"
+  },
+  "jobId": {
+    "value": 20
+  },
+  "targetsql": {
+    "value": "Data Source=jdhbatchtest.database.windows.net;Initial Catalog=testdbrestore;User Id=MyUser;Password=MyPassword"
+  },
+  "bacpacurl":{
+    "value": "https://jdhbatchstrg.blob.core.windows.net/bacpacs/test.bacpac?sp=r&st=2019-02-18T16:31:19Z&se=2019-03-07T00:31:19Z&spr=https&sv=2018-03-28&sig=uavwpcesMYj3NARC8lPSeuKZodnrk4qj%2FDq0%2FZMDQOE%3D&sr=b"
+  },
+  "bacpacfilename":{
+    "value":"test.bacpac"
+  }
+
+}
