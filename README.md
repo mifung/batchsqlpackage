@@ -11,3 +11,4 @@ Simple setup using templates to setup an Azure Batch Pool, install sqlpackage an
 4. Enter a pool id and number of nodes.
 
 5. When complete, run the following command: az batch job create --template sql_job_template.json --parameters job-params.json (make sure to update job-params with your parameters)
+[I'm an inline-style link](https://www.google.com)
