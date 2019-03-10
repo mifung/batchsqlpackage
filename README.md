@@ -1,5 +1,5 @@
 # batchsqlpackage
-This is an enhancement to a repository from John De Havilland's sqlpackageonazurebatch
+This is an enhancement to a repository from John De Havilland's sqlpackageonazurebatch. <p>
 Simple setup using templates to setup an Azure Batch Pool, install sqlpackage and then run tasks using it to restore databases.
 
 1.  Create a Resource Group <myresourcegroup> and add the following two services into it: <p>
@@ -43,7 +43,7 @@ Simple setup using templates to setup an Azure Batch Pool, install sqlpackage an
         2. change the date range to a longer duration if desired
         3. select 'Generate blob SAS token and URL'
         4. copy the blob SAS URL
-        5. paste it to the bacpac value location between the double quotes in the job-params.json file
+        5. paste the blob SAS URL to the bacpac value location between the double quotes in the job-params.json file
 
 7. When completed, run the following command: `az batch job create --template sql_job_template.json --parameters job-params.json` 
 
