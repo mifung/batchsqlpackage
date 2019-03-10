@@ -48,7 +48,7 @@ The purpose of this solution is to automate the processes of importing a bacpac 
 
 8. You can delete the (pool/node), (job/task) and bacpac file after the import has completed successfully
 
-## <span style="color:Green">For subsequent reruns simply run the following steps:</span>
+## <span style="color:Green">For subsequent reruns, simply run the following steps:</span>
 * Upload a new bacpac file to the blob storage
 * `az batch account login \ --resource-group myresourcegroup\ --name batchaccountname\ --shared-key-auth`
 * modify the parameters values listed in step 6
