@@ -34,7 +34,7 @@ The purpose of this solution is to automate the processes of importing a bacpac 
        * number of nodes
 
 6. Type `code .` in the Cloud Shell command line to open visual studio code for editing the job-params.json files  
-    * provide the pool-id that you have provided in step 5
+    * provide the pool-id that you have entered in step 5
     * provide a unique job-id
     * provide the data source, user id and password to the target SQL
     * provide the url to the bacpac file blob location
