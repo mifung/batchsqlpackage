@@ -2,7 +2,7 @@
 This is an enhancement to a repository from John De Havilland's sqlpackageonazurebatch
 Simple setup using templates to setup an Azure Batch Pool, install sqlpackage and then run tasks using it to restore databases.
 
-Create a Resource Group and add the following two services into it
+1.  Create a Resource Group and add the following two services into it
 
 First create a batch account in Azure
 
