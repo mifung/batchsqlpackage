@@ -22,6 +22,7 @@ The purpose of this solution is to automate the processes of importing a bacpac 
 4.  In the Azure Portal, click on the Cloud shell button. <br>
     * Run the following command to add the batch cli extensions: `az extension add --name azure-batch-cli-extensions`       
     * Authenticate Batch account to your CLI session: `az batch account login \ --resource-group myresourcegroup\ --name batchaccountname\ --shared-key-auth`
+    * or `az batch account login -g myResourceGroup -n mybatchaccount`
     
     * upload the following json files from cloud shell: 
        1. sql_pool_create_template.json
@@ -54,5 +55,5 @@ The purpose of this solution is to automate the processes of importing a bacpac 
 * modify the parameters values listed in step 6
 * `az batch pool create --template sql_pool_create_template.json`
 * `az batch job create --template sql_job_template.json --parameters job-params.json`
-9. test
+
 
