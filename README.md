@@ -54,4 +54,5 @@ The purpose of this solution is to automate the processes of importing a bacpac 
 * modify the parameters values listed in step 6
 * `az batch pool create --template sql_pool_create_template.json`
 * `az batch job create --template sql_job_template.json --parameters job-params.json`
+9. test
 
